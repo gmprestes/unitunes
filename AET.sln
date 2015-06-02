@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AET", "AET\AET.csproj", "{3F5FA568-4D8E-41EA-9550-F3533F17DB29}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A03F205D-A96F-425F-BF00-22D7C516991C}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Web", "MongoDB.Web\MongoDB.Web.csproj", "{90BB8808-E091-463D-AAFD-5134183BDCF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoRepository", "MongoRepository\MongoRepository.csproj", "{AED153C5-BB5F-4649-8F48-932C77E74664}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{D3747B14-514C-4230-95B1-D4A7211FF072}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{627026C7-56C0-439F-ADE3-16982BDBBC78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GmpsMvcController", "GmpsMvcController\GmpsMvcController.csproj", "{674BAF22-8147-45E0-B382-9780D896067E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SITE", "SITE\SITE.csproj", "{DFCE6DA0-862B-4D1A-A518-E8301093C129}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F5FA568-4D8E-41EA-9550-F3533F17DB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5FA568-4D8E-41EA-9550-F3533F17DB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5FA568-4D8E-41EA-9550-F3533F17DB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5FA568-4D8E-41EA-9550-F3533F17DB29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90BB8808-E091-463D-AAFD-5134183BDCF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90BB8808-E091-463D-AAFD-5134183BDCF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90BB8808-E091-463D-AAFD-5134183BDCF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90BB8808-E091-463D-AAFD-5134183BDCF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AED153C5-BB5F-4649-8F48-932C77E74664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED153C5-BB5F-4649-8F48-932C77E74664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED153C5-BB5F-4649-8F48-932C77E74664}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED153C5-BB5F-4649-8F48-932C77E74664}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3747B14-514C-4230-95B1-D4A7211FF072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3747B14-514C-4230-95B1-D4A7211FF072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3747B14-514C-4230-95B1-D4A7211FF072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3747B14-514C-4230-95B1-D4A7211FF072}.Release|Any CPU.Build.0 = Release|Any CPU
+		{627026C7-56C0-439F-ADE3-16982BDBBC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{627026C7-56C0-439F-ADE3-16982BDBBC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{627026C7-56C0-439F-ADE3-16982BDBBC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{627026C7-56C0-439F-ADE3-16982BDBBC78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{674BAF22-8147-45E0-B382-9780D896067E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{674BAF22-8147-45E0-B382-9780D896067E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{674BAF22-8147-45E0-B382-9780D896067E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{674BAF22-8147-45E0-B382-9780D896067E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFCE6DA0-862B-4D1A-A518-E8301093C129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFCE6DA0-862B-4D1A-A518-E8301093C129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFCE6DA0-862B-4D1A-A518-E8301093C129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFCE6DA0-862B-4D1A-A518-E8301093C129}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,113 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="page.master.cs" Inherits="AET.page" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <!-- Core CSS - Include with every page -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <!-- SB Admin CSS - Include with every page -->
+    <link href="/css/sb-admin.css" rel="stylesheet">
+    <!-- Custom CSS - Include with every page -->
+    <link href="/css/autocomplete.css" rel="stylesheet">
+    <link href="/css/datepicker.css" rel="stylesheet">
+    <link href="/css/modal.css" rel="stylesheet">
+
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="/js/jquery-1.10.2.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="/js/sb-admin.js"></script>
+
+    <!-- Custom Scripts - Include with every page -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script type="text/javascript" src="/Scripts/utils/downloadFile.js"></script>
+    <script type="text/javascript" src="/Scripts/utils/helpers.js"></script>
+    <script type="text/javascript" src="/Scripts/utils/app.js"></script>
+
+    <script src="/Scripts/utils/alertExtend.js"></script>
+    <script src="/Scripts/utils/angularMethods.js"></script>
+    <script src="/Scripts/utils/bootstrap-datepicker.js"></script>
+    <script src="/Scripts/utils/jquery.autocomplete.js"></script>
+    <script src="/Scripts/utils/jquery.maskedinput.min.js"></script>
+    <script src="/Scripts/utils/modalpopup.js"></script>
+    <script src="/Scripts/utils/tablePagination.js"></script>
+
+    <script src="/js/jquery.cookie.js"></script>
+
+    <!-- MASTER SCRIPT -->
+    <script type="text/javascript" src="/Scripts/view/master.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager" runat="server" EnableScriptGlobalization="true"
+            EnableScriptLocalization="true" EnablePageMethods="true" EnablePartialRendering="true" />
+        <div ng-app="aet">
+            <div id="wrapper">
+
+                <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0" ng-controller="MasterCtrl">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/default.aspx">Sistema AET</a>
+                    </div>
+                    <!-- /.navbar-header -->
+
+                    <ul class="nav navbar-top-links navbar-right">
+
+                        <li class="divider"></li>
+                        <li style="padding-top: 15px;">
+                            <b>Olá {{ username }}</b>
+                        </li>
+                        <li class="divider"></li>
+                    </ul>
+                    <!-- /.navbar-top-links -->
+
+                    <div class="navbar-default navbar-static-side" role="navigation">
+                        <div class="sidebar-collapse">
+                            <ul class="nav" id="side-menu">
+                                <li>
+                                    <a href="/meuperfil"><i class="fa fa-user fa-fw"></i>Meus Dados</a>
+                                </li>
+                                <li>
+                                    <a href="/auxilio"><i class="fa fa-book fa-fw"></i>Meus Auxílios</a>
+                                </li>
+                                <li ng-show="isAdmin">
+                                    <a href="/semestres/list"><i class="fa fa-calendar fa-fw"></i>Cad Semestres</a>
+                                </li>
+                                <li ng-show="isAdmin">
+                                    <a href="/instituicoes/list"><i class="fa fa-tags fa-fw"></i>Cad Instituicões</a>
+                                </li>
+                                <li ng-show="isAdmin">
+                                    <a href="/associado/list"><i class="fa fa-tags fa-fw"></i>Associados</a>
+                                </li>
+                                 <li ng-show="isAdmin">
+                                    <a href="/relatorios"><i class="fa fa-tags fa-fw"></i>Relatorios</a>
+                                </li>
+                                <li>
+                                    <a href="/alterarsenha"><i class="fa fa-gear fa-fw"></i>Alterar Senha</a>
+                                </li>
+                                <li>
+                                    <a href="#" ng-click="logout()"><i class="fa fa-sign-out fa-fw"></i>Sair</a>
+                                </li>
+                            </ul>
+                            <!-- /#side-menu -->
+                        </div>
+                        <!-- /.sidebar-collapse -->
+                    </div>
+                    <!-- /.navbar-static-side -->
+                </nav>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- /#wrapper -->
+        </div>
+    </form>
+</body>
+</html>
