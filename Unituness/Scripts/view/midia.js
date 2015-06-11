@@ -1,21 +1,23 @@
 ﻿function midiacontroller($scope, $http) {
     var token = jQuery("#usertoken").val();
-    $scope.transacao = {};
-    $scope.transacao.ValorTransacao = 5;
-    $scope.transacao.Cartao = {};
+    var id = window.location.pathname.toString().getRotaID();
+
+    $scope.midia = {};
 
     $scope.init = function () {
         $http({
             method: 'POST',
-            url: "/api/pagamento/novatransacao",
+            url: "/api/midia/iniciacompra",
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ token: token })
+            data: JSON.stringify({ token: token, arg: id })
         }).success(function (data, status) {
-            $scope.transacao = data;
+            $scope.midia = data[0];
+            $scope.podePagar = data[1];
+            $scope.credito = data[2];
         });
     };
 
-    $scope.pagar = function () {
+    $scope.comprar = function () {
         $http({
             method: 'POST',
             url: "/api/pagamento/realizartransacao",

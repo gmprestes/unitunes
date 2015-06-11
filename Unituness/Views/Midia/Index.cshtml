@@ -163,7 +163,7 @@
 
 </head>
 
-<body ng-app="app_sysadmin" ng-controller="pagamentocontroller" class="page page-id-9 page-template-default custom-background woocommerce-checkout woocommerce-page x-integrity x-integrity-light x-navbar-fixed-top-active x-full-width-layout-active x-content-sidebar-active x-v4_0_1 cornerstone-v1_0_1">
+<body ng-app="app_sysadmin" ng-controller="midiacontroller" class="page page-id-9 page-template-default custom-background woocommerce-checkout woocommerce-page x-integrity x-integrity-light x-navbar-fixed-top-active x-full-width-layout-active x-content-sidebar-active x-v4_0_1 cornerstone-v1_0_1">
     <input id="usertoken" type="hidden" value="@ViewBag.UserToken" />
     <div id="top" class="site">
         <header class="masthead masthead-inline" role="banner">
@@ -213,19 +213,29 @@
                     <div class="entry-content">
                         <div itemscope="" itemtype="http://schema.org/Product" id="product-90" class="post-90 product type-product status-publish has-post-thumbnail product_cat-albums product_cat-music downloadable shipping-taxable purchasable product-type-simple product-cat-albums product-cat-music instock">
                             <div class="images">
-                                <a href="https://theme.co/x/demo/shop/integrity/wp-content/uploads/sites/2/2013/06/cd_3_flat.jpg" itemprop="image" class="woocommerce-main-image zoom x-img x-img-link x-img-thumbnail man" title="cd_3_angle" data-rel="prettyPhoto[product-gallery]"><img width="862" height="862" src="https://theme.co/x/demo/shop/integrity/wp-content/uploads/sites/2/2013/06/cd_3_angle.jpg" class="attachment-entry wp-post-image" alt="cd_3_angle" title="cd_3_angle"></a>
+                                <a href="#" itemprop="image" class="woocommerce-main-image zoom x-img x-img-link x-img-thumbnail man" title="cd_3_angle" data-rel="prettyPhoto[product-gallery]">
+                                    <img width="862" height="862" src="https://theme.co/x/demo/shop/integrity/wp-content/uploads/sites/2/2013/06/cd_3_flat.jpg" class="attachment-entry wp-post-image" alt="cd_3_angle" title="cd_3_angle">
+                                </a>
                             </div>
                             <div class="summary entry-summary">
-                                <h1 itemprop="name" class="product_title entry-title">Woo Album #3</h1>
+                                <h1 itemprop="name" class="product_title entry-title">{{midia.Nome}}</h1>
+
                                 <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
 
-                                    <p class="price"><span class="amount">R$ 9.00</span></p>
+                                    <p class="price"><span class="amount">R$ {{midia.Preco}}</span></p>
                                 </div>
                                 <div itemprop="description">
-                                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                                    <p>{{midia.Descricao}}</p>
                                 </div>
 
-                                <button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
+                                @if (Request.IsAuthenticated)
+                                {
+                                    <button ng-click="comprar()" type="button" class="button alt">Comprar</button>
+                                }
+                                else
+                                {
+                                    <h4 itemprop="name" class="product_title entry-title">Faça login para comprar</h4>
+                                }
                             </div><!-- .summary -->
                         </div><!-- #product-90 -->
 
@@ -282,7 +292,7 @@
 
     <script src="/scripts/angular_1.2.9.min.js"></script>
     <script src="/scripts/angular_app.js"></script>
-    <script src="/scripts/view/pagamento.js"></script>
+    <script src="/scripts/view/midia.js"></script>
 
 </body>
 </html>
