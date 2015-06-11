@@ -102,6 +102,7 @@
 </head>
 
 <body class="home archive post-type-archive post-type-archive-product custom-background woocommerce woocommerce-page x-integrity x-integrity-light x-navbar-fixed-top-active x-full-width-layout-active x-content-sidebar-active x-v4_0_1 cornerstone-v1_0_1">
+   
     <div id="top" class="site">
         <header class="masthead masthead-inline" role="banner">
             <div class="x-navbar-wrap">
@@ -122,9 +123,18 @@
                                 <ul id="menu-primary-menu" class="x-nav">
                                     <li id="menu-item-108" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item menu-item-108"><a href="/"><span>Loja</span></a></li>
                                     <li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="/pagamento"><span>Inserir Credito</span></a></li>
-                                    <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-112">
-                                        <a href="/login?returnurl=/"><span>Login</span></a>
-                                    </li>
+                                    @if (Request.IsAuthenticated)
+                                    {
+                                        <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-112">
+                                            <a href="/login/delete"><span>Logout</span></a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li id="menu-item-112" class="menu-item menu-item-type-post_type menu-item-object-page  menu-item-112">
+                                            <a href="/login?returnurl=/"><span>Login</span></a>
+                                        </li>
+                                    }
                                 </ul>
                             </nav>
                         </div>
@@ -138,12 +148,9 @@
         </header>
         <div class="x-container max width offset">
             <div class="center" role="main">
-
                 <ul class="products cols-3">
                     <li class="first post-70 product type-product status-publish has-post-thumbnail product_cat-posters sale shipping-taxable purchasable product-type-simple product-cat-posters instock">
-
                         <div class="entry-product">
-
                             <span class="onsale">Sale!</span>
                             <div class="entry-featured"><a href="https://theme.co/x/demo/shop/integrity/product/flying-ninja/"><img width="862" height="862" src="https://theme.co/x/demo/shop/integrity/wp-content/uploads/sites/2/2013/06/poster_2_up.jpg" class="attachment-entry wp-post-image" alt="poster_2_up" /><div class="star-rating-container aggregate"><div class="star-rating" title="Rated 4.00 out of 5"><span style="width:80%"><strong class="rating">4.00</strong> out of 5</span></div></div></a></div><div class="entry-wrap">
                                 <header class="entry-header">

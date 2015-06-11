@@ -103,7 +103,7 @@ namespace SiteMVC.Helpers
         #endregion
 
 
-        public string getTemplateTransacao(TransacaoPagamento transacao, CartaoCredito cartaoCredito)
+        public string getTemplateTransacao(TransacaoPagamento transacao)
         {
             StringBuilder template = new StringBuilder();
             template.Append("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>");
@@ -117,10 +117,10 @@ namespace SiteMVC.Helpers
             template.Append("</dados-ec>");
 
             template.Append("<dados-portador>");
-            template.AppendFormat("<numero>{0}</numero>", cartaoCredito.Numero);
-            template.AppendFormat("<validade>{0}</validade>", cartaoCredito.Validade);
+            template.AppendFormat("<numero>{0}</numero>", transacao.Cartao.Numero);
+            template.AppendFormat("<validade>{0}</validade>", transacao.Cartao.ValidadeAno + transacao.Cartao.ValidadeMes);
             template.Append("<indicador>1</indicador>"); // INDICADOR DO CODIGO DE SEGURNAÇA DO CARTAO (1 = presente)
-            template.AppendFormat("<codigo-seguranca>{0}</codigo-seguranca>", cartaoCredito.CVC);
+            template.AppendFormat("<codigo-seguranca>{0}</codigo-seguranca>", transacao.Cartao.CVC);
             template.Append("</dados-portador>");
 
             template.Append("<dados-pedido>");
@@ -133,14 +133,14 @@ namespace SiteMVC.Helpers
             template.Append("</dados-pedido>");
 
             template.Append("<forma-pagamento>");
-            template.AppendFormat("<bandeira>{0}</bandeira>", cartaoCredito.Bandeira); //BANDEIRA SUPORTADA PELA CIELO EM LETRAS MINUSCULAS
+            template.AppendFormat("<bandeira>{0}</bandeira>", transacao.Cartao.Bandeira); //BANDEIRA SUPORTADA PELA CIELO EM LETRAS MINUSCULAS
             template.AppendFormat("<produto>{0}</produto>", 1); // 2 = Credito loja
             template.AppendFormat("<parcelas>{0}</parcelas>", 1); // Numero de parcelas
             template.Append("</forma-pagamento>");
 
             template.Append("<autorizar>3</autorizar>"); // Suportados pela maioria dos cartões
             template.Append("<capturar>true</capturar>"); //para obter o retorno da transação na hora TRUE
-            template.AppendFormat("<bin>{0}</bin>", cartaoCredito.Numero.Substring(0, 6));
+            template.AppendFormat("<bin>{0}</bin>", transacao.Cartao.Numero.Substring(0, 6));
 
             template.Append("</requisicao-transacao>");
 
@@ -232,7 +232,7 @@ namespace SiteMVC.Helpers
         }
 
     }
-   
+
 
 
 }

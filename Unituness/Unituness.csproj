@@ -303,6 +303,7 @@
     <Content Include="img\tn_user_07.jpg" />
     <Content Include="Scripts\angular_1.2.9.min.js" />
     <Content Include="Scripts\angular_app.js" />
+    <Content Include="Scripts\view\pagamento.js" />
     <Content Include="Scripts\view\vendas.js" />
     <Content Include="Theme\404.html" />
     <Content Include="Theme\assets\css\animate-custom.css" />

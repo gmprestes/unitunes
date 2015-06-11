@@ -1,4 +1,160 @@
-﻿var appAngularSIGE = angular.module('app_sysadmin', []);
+﻿function escapeRegExp(str) {
+    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+}
+
+function replaceAll(find, replace, str) {
+    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
+function stringIsNullOrEmpty(string) {
+    if (string == null || string == '' || typeof (string) == "undefined")
+        return true;
+    else
+        return false;
+}
+
+function reverteString(source) {
+
+    var retorno = "";
+    for (var i = source.length; i--; i > -1)
+        retorno += source[i];
+
+    return retorno;
+
+}
+
+Number.prototype.formataDinheiro = function (casasDecimais, emQuantosAgrupar) {
+
+    var foiDec = false;
+    var source = replaceAll('.', '', this.toFixed(casasDecimais).toString());
+    var retorno = "";
+    var index = 1;
+
+    for (var i = source.length; i--; i > -1) {
+        retorno += source[i];
+
+        if (foiDec) {
+            if (emQuantosAgrupar == index && i != 0) {
+                //se proximo for sinal de negativo não coloca ponto
+                if (source[i - 1] != "-") retorno += ".";
+                index = 0;
+            }
+        }
+        else {
+            if (casasDecimais == index) {
+                retorno += ",";
+                foiDec = true;
+                index = 0;
+            }
+        }
+
+        index++;
+    }
+
+    return reverteString(retorno);
+};
+
+Number.prototype.parseNumber = function () {
+    var valor = parseFloat(this);
+    if (isNaN(valor)) valor = 0;
+    if (isFinite(valor) == false) valor = 0;
+    return valor;
+};
+
+String.prototype.parseNumber = function () {
+
+    var valor = replaceAll('.', '', this);
+    valor = replaceAll(',', '.', valor);
+    valor = parseFloat(valor);
+
+    if (isNaN(valor)) valor = 0;
+    if (isFinite(valor) == false) valor = 0;
+    return valor;
+};
+
+jQuery.fn.SomenteNumeros =
+function () {
+    return this.each(function () {
+
+        //captura tudo, inclusive colar com mouse direito
+        jQuery(this).on('input', function (e) {
+
+            var validChars = "0123456789";
+            var except = jQuery(this).attr('numbersexcept');
+            if (stringIsNullOrEmpty(except) == false) {
+                validChars += except;
+            }
+
+            var validatedString = "";
+            var inputString = jQuery(this).val();
+            for (var i = 0, len = inputString.length; i < len; i++) {
+
+                if (validChars.indexOf(inputString[i]) >= 0) {
+                    validatedString += inputString[i];
+                }
+            }
+
+            if (validatedString != inputString) {
+                jQuery(this).val(validatedString);
+                jQuery(this).trigger('change');
+            }
+        });
+        //podia botar no método lá em cima, mas a deixa aqui, aí não interfere quando o cara escreve, só quando o textbox perde o foco
+        jQuery(this).change(function (e) {
+            if (jQuery(this).val() == '') {
+                jQuery(this).val('0');
+                jQuery(this).trigger('change');
+            }
+        });
+
+    });
+};
+
+jQuery.fn.Decimal =
+function () {
+    return this.each(function () {
+
+        //captura tudo, inclusive colar com mouse direito
+        jQuery(this).on('input', function (e) {
+
+            var validChars = "0123456789.,";
+            if (jQuery(this).hasClass("negative")) {
+                validChars += "-";
+            }
+
+            var validatedString = "";
+            var inputString = jQuery(this).val();
+            for (var i = 0, len = inputString.length; i < len; i++) {
+
+                if (validChars.indexOf(inputString[i]) >= 0) {
+                    validatedString += inputString[i];
+                }
+            }
+
+            if (validatedString != inputString) {
+                jQuery(this).val(validatedString);
+                jQuery(this).trigger('change');
+            }
+        });
+        //podia botar no método lá em cima, mas a deixa aqui, aí não interfere quando o cara escreve, só quando o textbox perde o foco
+        jQuery(this).change(function (e) {
+            if (jQuery(this).val() == '') {
+                jQuery(this).val('0');
+                jQuery(this).trigger('change');
+            }
+        });
+
+    });
+};
+
+jQuery(function () {
+
+    jQuery(".numbers").SomenteNumeros();
+
+    jQuery(".money").Decimal();
+});
+
+var appAngularSIGE = angular.module('app_sysadmin', []);
 
 appAngularSIGE.directive('repeatDone', function () {
     return function (scope, element, attrs) {

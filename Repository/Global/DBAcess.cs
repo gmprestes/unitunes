@@ -22,15 +22,26 @@ namespace Repository
     {
         private MongoUrl MongoUrl;
 
+        private static DBAcess _instance;
+
         #region Construtores
 
         /// <summary>
         /// Construtor que inicializa todos os repositorios
         /// </summary>
-        public DBAcess(MongoUrl mongoUrl)
+        private DBAcess()
         {
-            this.MongoUrl = mongoUrl;
+            this.MongoUrl = new MongoUrl(string.Format("mongodb://{0}:{1}@{2}:27017/{3}", "admin", "123456", "192.168.2.99", "unitunes"));
         }
+
+        public static DBAcess GetInstance()
+        {
+            if(_instance == null)
+                _instance = new DBAcess();
+
+            return _instance;
+        }
+
         #endregion
 
         #region Mongo Repositorios Getters

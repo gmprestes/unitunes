@@ -7,7 +7,7 @@ namespace SysAdmin.API
 {
     public class AjaxBodyData
     {
-        public string data { get; set; }
+        public string token { get; set; }
         public string arg { get; set; }
         public string arg2 { get; set; }
         public string arg3 { get; set; }
@@ -16,7 +16,7 @@ namespace SysAdmin.API
 
         public AjaxBodyData()
         {
-            this.data = string.Empty;
+            this.token = string.Empty;
             this.arg = string.Empty;
             this.arg2 = string.Empty;
             this.arg3 = string.Empty;
