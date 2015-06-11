@@ -47,12 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DtoNotasFiscais.cs" />
-    <Compile Include="DtoAuxilio.cs" />
-    <Compile Include="DtoInstituicao.cs" />
-    <Compile Include="DtoSemestre.cs" />
     <Compile Include="DtoArquivo.cs" />
-    <Compile Include="DtoPessoa.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

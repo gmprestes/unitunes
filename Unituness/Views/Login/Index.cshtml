@@ -1,0 +1,95 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login | SIGE Cloud Sys Admin</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Boostrap Theme -->
+    <link href="/css/skin.css" rel="stylesheet">
+    <link href="/css/boostrap-overrides.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+
+    <!-- Ez mark-->
+    <link rel="stylesheet" href="/assets/css/ezmark.css">
+
+    <!-- Font Awesome-->
+    <link href="/assets/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Animate-->
+    <link href="/assets/css/animate-custom.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/dist/js/bootstrap.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="../../assets/js/html5shiv.js"></script>
+    <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="layout-bg-med">
+
+    <div id="login" class="container">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-4">
+                <div class="col-sm-8 text-center">
+                    <div class="center-panel custom-check animated fadeInDown">
+                        <span class="padding-bottom avatar avatar-md">
+                            <img src="/img/avatar-lg.jpg" class="img-circle" width="100">
+                        </span>
+                        <form id="formlogin" class="form-signin form-group" method="post" action="/login">
+                            @if (ViewBag.Mensagem != null)
+                            {
+                                <h4 class="alert alert-danger">@ViewBag.Mensagem</h4>
+                            }
+                            <div class="input-stacked input-group-lg add-shadow">
+                                <input type="text" name="user" class="form-control" placeholder="Usuario" required autofocus>
+                                <input type="password" name="pass" class="form-control" placeholder="Senha" required>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                                Logar
+                            </button>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Plugins & Custom -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- EzMark -->
+    <script src="/assets/js/jquery.ezmark.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.custom-check input').ezMark()
+        });
+    </script>
+
+    <!-- Custom -->
+    <script src="/assets/js/script.js"></script>
+    @*<script>
+            $("#formlogin").submit(function () {
+                $.ajax({
+                    method: 'GET',
+                    url: '/login/IsValid?user=' + $('#user').val() + '&pass=' + $('#pass').val()
+                });
+            });
+        </script>*@
+
+</body>
+</html>

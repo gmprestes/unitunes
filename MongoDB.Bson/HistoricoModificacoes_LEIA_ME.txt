@@ -1,0 +1,26 @@
+﻿************************************************************************************************************************
+13/08/2014 
+Foi necessario a modificação desta dll para que o serializador conseguisse desserializar tipos numericos para string
+Para isso foram modificadas as seguintes classes com os respectivos metodos :
+
+BsonClassMapSerializer<TClass>
+		DeserializeMemberValue(BsonDeserializationContext context, BsonMemberMap memberMap);
+
+BsonMemberMap
+		ForceSetSerializer(IBsonSerializer serializer)
+
+BsonReader
+		VerifyBsonType(string methodName, BsonType requiredBsonType)
+
+SerializerBase<TValue>
+		EnsureBsonTypeEquals(BsonReader reader, BsonType bsonType);
+
+BsonStringSerializer
+		DeserializeValue(BsonDeserializationContext context);
+
+StringSerializer
+		 DeserializeValue(BsonDeserializationContext context);
+
+Para maiores detalhes consultar os comentarios nos proprios metodos alterados
+
+*************************************************************************************************************************

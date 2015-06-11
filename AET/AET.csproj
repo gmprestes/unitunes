@@ -287,17 +287,9 @@
     <Folder Include="img\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GmpsMvcController\GmpsMvcController.csproj">
-      <Project>{674baf22-8147-45e0-b382-9780d896067e}</Project>
-      <Name>GmpsMvcController</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{627026c7-56c0-439f-ade3-16982bdbbc78}</Project>
       <Name>Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MongoDB.Web\MongoDB.Web.csproj">
-      <Project>{90bb8808-e091-463d-aafd-5134183bdcf7}</Project>
-      <Name>MongoDB.Web</Name>
     </ProjectReference>
     <ProjectReference Include="..\MongoRepository\MongoRepository.csproj">
       <Project>{aed153c5-bb5f-4649-8f48-932c77e74664}</Project>
