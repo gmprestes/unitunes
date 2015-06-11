@@ -4,8 +4,6 @@
     $scope.transacao.ValorTransacao = 5;
     $scope.transacao.Cartao = {};
 
-    console.log(token);
-
     $scope.init = function () {
         $http({
             method: 'POST',
@@ -22,10 +20,42 @@
             method: 'POST',
             url: "/api/pagamento/realizartransacao",
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ arg: JSON.stringify($scope.transacao) })
+            data: JSON.stringify({ token: token, arg: JSON.stringify($scope.transacao) })
+        }).success(function (data, status) {
+            if (data[0] == true) {
+                alert("Transação realizada com sucesso. Você já pode aproveitar seus novos creditos.");
+                window.location = "/pagamento/recibo/" + data[1];
+            }
+            else {
+                alert("A transação não foi efetuada, verifique os dados informados e certifique-se que o cartão possui saldo para a transação.");
+            }
+        });
+    }
+
+    $scope.init();
+}
+
+
+function pagamentorecibocontroller($scope, $http) {
+    var token = jQuery("#usertoken").val();
+
+    var id = window.location.pathname.toString().getRotaID();
+
+    $scope.transacao = {};
+
+    $scope.init = function () {
+        $http({
+            method: 'POST',
+            url: "/api/pagamento/get",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ token: token, arg: id })
         }).success(function (data, status) {
             $scope.transacao = data;
         });
+    };
+
+    $scope.baixar = function () {
+        window.print();
     }
 
     $scope.init();

@@ -13,6 +13,11 @@ function stringIsNullOrEmpty(string) {
         return false;
 }
 
+String.prototype.getRotaID = function () {
+    var aux = this.split("/");
+    return aux[aux.length - 1].split("?")[0].toString();
+};
+
 function reverteString(source) {
 
     var retorno = "";

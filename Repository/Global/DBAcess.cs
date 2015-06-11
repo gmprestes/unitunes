@@ -58,11 +58,25 @@ namespace Repository
             }
         }
 
+        public MongoRepository<TransacaoPagamento> _repositoryTransacaoPagamento
+        {
+            get
+            {
+                if (this._repositoryTransacaoPagamentoAtributo == null)
+                    this._repositoryTransacaoPagamentoAtributo = new MongoRepository<TransacaoPagamento>(this.MongoUrl);
+
+
+                return this._repositoryTransacaoPagamentoAtributo;
+            }
+        }
+
         #endregion
 
         #region Mongo Repositorios Atributos
 
         private MongoRepository<Usuario> _repositoryUsuarioAtributo;
+
+        private MongoRepository<TransacaoPagamento> _repositoryTransacaoPagamentoAtributo;
 
         #endregion
 

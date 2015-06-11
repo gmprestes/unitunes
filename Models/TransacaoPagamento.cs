@@ -10,6 +10,7 @@ namespace Models
 {
     public class TransacaoPagamento : Entity
     {
+        public string TID { get; set; }
 
         [BsonDateTimeOptions(Kind = DateTimeKind.Local)]
         public DateTime DataTransacao { get; set; }
@@ -18,6 +19,6 @@ namespace Models
 
         public CartaoCredito Cartao { get; set; }
 
-        public Usuario Usuario { get; set; }
+        public string UsuarioId { get; set; }
     }
 }

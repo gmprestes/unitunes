@@ -103,7 +103,7 @@ namespace SiteMVC.Helpers
         #endregion
 
 
-        public string getTemplateTransacao(TransacaoPagamento transacao)
+        public string GetTemplateTransacao(TransacaoPagamento transacao)
         {
             StringBuilder template = new StringBuilder();
             template.Append("<?xml version=\"1.0\" encoding=\"ISO-8859-1\"?>");
@@ -124,7 +124,7 @@ namespace SiteMVC.Helpers
             template.Append("</dados-portador>");
 
             template.Append("<dados-pedido>");
-            template.AppendFormat("<numero>{0}</numero>", transacao.Id);
+            template.AppendFormat("<numero>{0}</numero>", new Random().Next(1, 100));
             template.AppendFormat("<valor>{0}</valor>", string.Format("{0:0.00}", Math.Round(transacao.ValorTransacao, 0)).Replace(",", ""));
             template.Append("<moeda>986</moeda>"); // 986 = REAL
             template.AppendFormat("<data-hora>{0:yyyy-MM-dd}T{0:HH:mm:ss}</data-hora>", transacao.DataTransacao); //EX.: 2011-12-07T11:43:37
