@@ -31,7 +31,7 @@ namespace Repository
         /// </summary>
         private DBAcess()
         {
-            this.MongoUrl = new MongoUrl(string.Format("mongodb://{0}:{1}@{2}:27017/{3}", "admin", "123456", "192.168.2.99", "unitunes"));
+            this.MongoUrl = new MongoUrl(string.Format("mongodb://{0}:{1}@{2}:27017/{3}", "admin", "123456", "localhost", "unitunes"));
         }
 
         public static DBAcess GetInstance()
@@ -58,6 +58,18 @@ namespace Repository
             }
         }
 
+        public MongoRepository<Midia> _repositoryMidia
+        {
+            get
+            {
+                if (this._repositoryMidiaAtributo == null)
+                    this._repositoryMidiaAtributo = new MongoRepository<Midia>(this.MongoUrl);
+
+
+                return this._repositoryMidiaAtributo;
+            }
+        }
+
         public MongoRepository<TransacaoPagamento> _repositoryTransacaoPagamento
         {
             get
@@ -77,6 +89,8 @@ namespace Repository
         private MongoRepository<Usuario> _repositoryUsuarioAtributo;
 
         private MongoRepository<TransacaoPagamento> _repositoryTransacaoPagamentoAtributo;
+
+        private MongoRepository<Midia> _repositoryMidiaAtributo;
 
         #endregion
 

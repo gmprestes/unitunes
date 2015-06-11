@@ -7,7 +7,7 @@
     $scope.init = function () {
         $http({
             method: 'POST',
-            url: "/api/midia/iniciacompra",
+            url: "/api/midia/iniciarcompra",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({ token: token, arg: id })
         }).success(function (data, status) {
@@ -20,7 +20,7 @@
     $scope.comprar = function () {
         $http({
             method: 'POST',
-            url: "/api/pagamento/realizartransacao",
+            url: "/api/mida/comprar",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({ token: token, arg: JSON.stringify($scope.transacao) })
         }).success(function (data, status) {

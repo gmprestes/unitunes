@@ -230,7 +230,9 @@
 
                                 @if (Request.IsAuthenticated)
                                 {
-                                    <button ng-click="comprar()" type="button" class="button alt">Comprar</button>
+                                    <button ng-show="podePagar" ng-click="comprar()" type="button" class="button alt">Comprar</button>
+                                    <h4 ng-hide="podePagar" itemprop="name" class="product_title entry-title">Você não possui créditos suficientes</h4>
+                                    <button ng-hide="podePagar" onclick="window.location = '/pagamento'" type="button" class="button alt">Inserir Credito</button>
                                 }
                                 else
                                 {
