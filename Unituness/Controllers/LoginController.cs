@@ -25,7 +25,7 @@ namespace SysAdmin.Controllers
                 FormsAuthentication.SetAuthCookie(form["user"], true);
 
                 if (string.IsNullOrEmpty(Request.QueryString["ReturnUrl"]))
-                    return Redirect("/Home");
+                    return Redirect("/Admin");
                 else
                     return Redirect(Request.QueryString["ReturnUrl"]);
             }
@@ -35,8 +35,31 @@ namespace SysAdmin.Controllers
             return View();
         }
 
+        public ActionResult Delete()
+        {
+            FormsAuthentication.SignOut();
+            return Redirect("/Home");
+        }
+
         public ActionResult NewUser()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult NewUser(FormCollection form)
+        {
+            if (string.IsNullOrEmpty(form["nome"]))
+                ViewBag.Mensagem = "Informe seu nome";
+            else if (string.IsNullOrEmpty(form["email"]))
+                ViewBag.Mensagem = "Informe seu email";
+            else if (string.IsNullOrEmpty(form["user"]))
+                ViewBag.Mensagem = "Informe um nome de usuario";
+            else if (string.IsNullOrEmpty(form["pass"]))
+                ViewBag.Mensagem = "Informe uma senha";
+            else
+                return Redirect("/Login");
+
             return View();
         }
     }

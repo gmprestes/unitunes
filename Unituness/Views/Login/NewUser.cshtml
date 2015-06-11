@@ -47,19 +47,18 @@
                 <div class="col-sm-8 text-center">
                     <div class="center-panel custom-check animated fadeInDown">
                         <span class="padding-bottom avatar avatar-md">
-                            <h4>Criar Usuario</h4>
+                            <h3>Criar Usuario</h3>
                         </span>
-                        <form id="formlogin" class="form-signin form-group" method="post" action="/login">
+                        <form id="formlogin" class="form-signin form-group" method="post" action="/login/newuser">
                             @if (ViewBag.Mensagem != null)
                             {
                                 <h4 class="alert alert-danger">@ViewBag.Mensagem</h4>
                             }
                             <div class="input-stacked input-group-lg add-shadow">
-                                <input type="text" name="user" class="form-control" placeholder="Informe seu Nome" required autofocus>
-                                <input type="text" name="email" class="form-control" placeholder="Informe seu Email" required autofocus>
-                                <input type="text" name="user" class="form-control" placeholder="Usuario" required autofocus>
-                                <input type="password" name="pass" class="form-control" placeholder="Senha" required>
-                                <input type="password" name="passrepit" class="form-control" placeholder="Repita a Senha" required>
+                                <input type="text" name="nome" class="form-control" placeholder="Informe seu Nome" required autofocus />
+                                <input type="text" name="email" class="form-control" placeholder="Informe seu Email" required />
+                                <input type="text" name="user" class="form-control" placeholder="Usuario" required />
+                                <input type="password" name="pass" class="form-control" placeholder="Senha" required />
                             </div>
                             <button class="btn btn-lg btn-primary btn-block" type="submit">
                                 Logar

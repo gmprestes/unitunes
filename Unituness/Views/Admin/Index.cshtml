@@ -1,0 +1,353 @@
+﻿ <!-- page content header -->
+<div class="row add-padding">
+    <div class="pull-left">
+        <h1>Santa Tartaruga</h1>
+        <ol class="breadcrumb">
+            <li class="active"><a href="index.html" class="text-transparent">Dashboard</a></li>
+        </ol>
+    </div>
+</div>
+<!-- / page content header -->
+<!--Page Content-->
+<!-- Stats & Updates Row 1-->
+<div class="row no-padding">
+    <!--row 1, col 1-->
+    <div class="col-md-3 col-sm-6">
+        <div class="panel panel-body-only panel-secondary-solid">
+            <div class="panel-body">
+                <div class="pull-left">
+                    <div class="badge-circle daily-stat-left"><div class="big-text"><i class="icon-user"></i></div></div>
+                </div>
+                <span id="new-comments" class="big-text"></span>
+                <div class="stat text-transparent">
+                    <h5>New Users </h5>
+                </div>
+            </div>
+        </div>
+    </div><!--/ row 1, col 1-->
+    <!--row 1, col 2-->
+    <div class="col-md-3 col-sm-6">
+        <div class="panel panel-body-only panel-warning-solid">
+            <div class="panel-body">
+                <div class="pull-left">
+                    <div class="badge-circle daily-stat-left"><div class="big-text"><i class="icon-comment"></i></div></div>
+                </div>
+                <span id="new-users" class="big-text"></span>
+                <div class="stat text-transparent">
+                    <h5>Comments </h5>
+                </div>
+            </div>
+        </div>
+    </div><!--/ row 1, col 2-->
+    <!--row 1, col 3-->
+    <div class="col-md-3 col-sm-6">
+        <div class="panel panel-body-only panel-primary-solid">
+            <div class="panel-body">
+                <div class="pull-left">
+                    <div class="badge-circle daily-stat-left"><div class="big-text"><i class="icon-rss"></i></div></div>
+                </div>
+                <span id="new-subscribers" class="big-text"></span>
+                <div class="stat text-transparent">
+                    <h5>Subscribers </h5>
+                </div>
+            </div>
+        </div>
+    </div><!--/ row 1, col 3-->
+    <!--row 1, col 4-->
+    <div class="col-md-3 col-sm-6">
+        <div class="panel panel-body-only panel-info-solid">
+            <div class="panel-body">
+                <div class="pull-left">
+                    <div class="badge-circle daily-stat-left"><div class="big-text"><i class="icon-shopping-cart"></i></div></div>
+                </div>
+                <span id="new-orders" class="big-text"></span>
+                <div class="stat text-transparent">
+                    <h5>Pending Orders </h5>
+                </div>
+            </div>
+        </div>
+    </div><!--/ row 1, col 4-->
+</div><!--/ row-->
+<!--/ Stats & Updates Row 1-->
+<!-- Stats & Updates Row 2-->
+<!--row-->
+<div class="row no-padding">
+    <!--col 1-->
+    <div class="col-md-4">
+        <div class="panel panel-body-only panel-white-solid">
+            <div class="panel-body">
+                <a href="#" class="pull-left text-transparent"><h5>Server</h5></a>
+                <div class="pull-right text-transparent"><h4>220/250 GB</h4></div>
+                <div class="clearfix"></div>
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-gray" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%"></div>
+                </div>
+            </div>
+        </div>
+    </div><!--/ col 1-->
+    <!--col 2-->
+    <div class="col-md-4">
+        <div class="panel panel-body-only panel-white-solid">
+            <div class="panel-body">
+                <a href="#" class="pull-left text-transparent"><h5>Inbox</h5></a>
+                <div class="pull-right text-transparent"><h4>100/250 GB</h4></div>
+                <div class="clearfix"></div>
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-gray" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%"></div>
+                </div>
+            </div>
+        </div>
+    </div><!--/  col 2-->
+    <!--col 3-->
+    <div class="col-md-4">
+        <div class="panel panel-body-only panel-white-solid">
+            <div class="panel-body">
+                <a href="#" class="pull-left text-transparent"><h5>Storage</h5></a>
+                <div class="pull-right text-transparent"><h4>200/250 GB</h4></div>
+                <div class="clearfix"></div>
+                <div class="progress progress-striped active">
+                    <div class="progress-bar progress-bar-gray" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width:55%"></div>
+                </div>
+            </div>
+        </div>
+    </div><!--/ col 3-->
+</div><!--/ row-->
+<!--/ Stats & Updates Row 2-->
+<!--Stats & Updates Row 3 -->
+<div class="row no-padding">
+    <!-- Flot Realtime  -->
+    <div class="col-md-8">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="pull-left"><h4><i class="icon-sitemap"></i> Monthly Traffic Stats</h4></div>
+                <div class="tools pull-right">
+                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body no-padding">
+                <!-- realtime chart  -->
+                <div id="content">
+                    <div class="demo-container">
+                        <div id="placeholder" class="demo-placeholder"></div>
+                    </div>
+                </div><!-- / realtime chart  -->
+
+            </div>
+            <div class="panel-footer">
+                <a href="#"><small>VIEW ALL</small></a>
+                <a href="#"><div class="pull-right"><i class="icon-circle-arrow-right"></i></div></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <!-- inner col 1 --><!-- todo -->
+        <div class="panel panel-white-solid">
+            <div class="panel-heading">
+                <div class="pull-left"><h4><i class="icon-tasks"></i> Todo List</h4></div>
+                <div class="tools pull-right">
+                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body custom-check">
+                <div class="table-responsive table-no-border">
+                    <table id="todo" class="table table-hover custom-check table-striped ">
+                        <tbody>
+                            <tr>
+                                <td class="tools">
+                                    <span class="check"><input type="checkbox" class="checked"></span>
+                                    <a href="#">Meet with Arin</a>
+                                    <a class="close no-padding-right" aria-hidden="true" data-dismiss="alert"><i class="icon-remove"></i></a>
+                                    <a href="#" class="text-transparent pull-right"><i class="icon-ok text-transparent "></i></a>
+                                    <a href="#" class="text-transparent pull-right"><i class="icon-pencil text-transparent "></i></a>
+
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td class="tools">
+                                    <span class="check"><input type="checkbox" class="checked"></span>
+                                    <a href="#">Send invoice</a>
+                                    <a class="close no-padding-right" aria-hidden="true" data-dismiss="alert"><i class="icon-remove"></i></a>
+                                    <a href="#" class="text-transparent pull-right"><i class="icon-ok text-transparent "></i></a>
+                                    <a href="#" class="text-transparent pull-right"><i class="icon-pencil text-transparent "></i></a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tools">
+                                    <span class="check"><input type="checkbox" class="checked"></span>
+                                    <a href="#">Check messages</a>
+                                    <a class="close no-padding-right" aria-hidden="true" data-dismiss="alert"><i class="icon-remove"></i></a>
+                                    <a href="#" class="text-transparent pull-right"><i class="icon-ok text-transparent "></i></a>
+                                    <a href="#" class="text-transparent pull-right"><i class="icon-pencil text-transparent "></i></a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tools">
+                                    <span class="check"><input type="checkbox" class="checked"></span>
+                                    <a href="#">Pay bills</a>
+                                    <a class="close no-padding-right" aria-hidden="true" data-dismiss="alert"><i class="icon-remove"></i></a>
+                                    <a href="#" class="text-transparent pull-right"><i class="icon-ok text-transparent "></i></a>
+                                    <a href="#" class="text-transparent pull-right"><i class="icon-pencil text-transparent "></i></a>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="tools">
+                                    <span class="check"><input type="checkbox" class="checked"></span>
+                                    <a href="#">Schedule site </a>
+                                    <a class="close no-padding-right" aria-hidden="true" data-dismiss="alert"><i class="icon-remove"></i></a>
+                                    <a href="#" class="text-transparent pull-right"><i class="icon-ok text-transparent "></i></a>
+                                    <a href="#" class="text-transparent pull-right"><i class="icon-pencil text-transparent "></i></a>
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-inverse btn-xs"><span class="pull-left"><i class="icon-plus"></i>&nbsp;&nbsp;Add Task</span></button>
+                <a href="#"><div class="pull-right text-transparent"><i class="icon-circle-arrow-right"></i></div></a>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <!-- / todo -->
+    </div>
+</div><!--/ stats & updates row 3 -->
+<!-- Stats & Updates Row 4 -->
+<div class="row no-padding">
+    <!-- Weekly traffic stats -->
+    <div class="col-md-8">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="pull-left"><h4><i class="icon-signal"></i> Recent Activity</h4></div>
+                <div class="tools pull-right">
+                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="brand-primary-bg panel-body ">
+                <!-- graph -->
+                <div id="weeklysales" class="submenu" style="height:242px;"></div> <!-- /graph -->
+            </div>
+            <div class="brand-primary-bg panel-footer"></div>
+        </div>
+        <!-- / panel -->
+    </div><!-- / weekly traffics stats -->
+    <!-- Calendar-->
+    <div class="col-md-4 col-sm-12">
+        <div id="calendar">
+            <div class="panel panel-med-gray-solid">
+                <div class="panel-body no-padding add-radius">
+                    <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
+                        <div class="arrow"></div>
+                        <h3 class="popover-title" style="disadding: none;"></h3>
+                        <div id="date-popover-content" class="popover-content"></div>
+                    </div>
+                    <div id="my-calendar"></div>
+
+                </div>
+            </div>
+        </div>
+    </div><!-- / calendar -->
+</div><!-- / Stats & Updates Row 4 -->
+<!-- Stats & Updates Row 5 -->
+<div class="row no-padding">
+    <!--Map-->
+    <div class="col-md-8">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="pull-left"><h4><i class="icon-location-arrow"></i> Recent Visits</h4></div>
+                <div class="tools pull-right">
+                    <a class="btn btn-inverse btn-xs">Visits</a>
+                    <a class="btn btn-inverse btn-xs disabled">Orders</a>&nbsp;&nbsp;&nbsp;
+                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <!-- google map -->
+            <div class="panel-body no-padding">
+                <section id="map">
+                    <div id="my-map"></div>
+                </section>
+            </div><!--/ google map-->
+            <div class="panel-footer text-center">
+                <div class="col-md-3 col-xs-6">
+                    <p><strong>Hits 2013</strong></p>
+                    <span class="sparkline">&nbsp;</span>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <p><strong>Hits 2012</strong></p>
+                    <div class="sparkline2"></div>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <p><strong>Hits 2011</strong></p>
+                    <span class="sparkline">&nbsp;</span>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <p><strong>Hits 2010</strong></p>
+                    <span class="sparkline2">&nbsp;</span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div><!--/map-->
+    <!-- Easy Pie Charts-->
+    <div id="pie-charts" class="col-md-4">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="pull-left"><h4><i class="icon-ok-sign"></i> Views</h4></div>
+                <div class="tools pull-right">
+                    <a href="#"><i class="icon-refresh text-transparent"></i></a>
+                    <a href="javascript:;" class="close-panel" data-dismiss="panel" aria-hidden="true"><i class="icon-remove text-transparent"></i></a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-body">
+                <div class="row col-lg-12 no-padding no-margin">
+                    <div class="pull-left">
+                        <div class="no-padding"><h5 class="no-margin">No. of Views</h5></div>
+                        <div class="no-padding"><h3><i class="icon-arrow-up text-transparent"></i>&nbsp;<strong>6%</strong></h3></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-12 text-center">
+                    <div class="chart">
+                        <div class="percentage-light" data-percent="75"><span class="text-transparent">75%</span></div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="row col-lg-12 no-padding no-margin">
+                    <div class="pull-left">
+                        <div class="no-padding"><h5 class="no-margin">No. of Views</h5></div>
+                        <div class="no-padding"><h3><i class="icon-arrow-down text-transparent"></i>&nbsp;<strong>12%</strong></h3></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-12 text-center">
+                    <div class="chart">
+                        <div class="percentage-light" data-percent="52"><span class="text-transparent">52%</span></div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="panel-footer">
+                <span class="btn btn-sm btn-secondary">See All Sales</span>
+                <ul class="list-inline pull-right text-transparent icons-medium">
+                    <li><a href="#"><i class="icon-heart"></i></a></li>
+                    <li class=""><a href="#"><i class="icon-twitter"></i></a></li>
+                    <li class=""><a href="#"><i class="icon-facebook"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div><!--/end easy pie charts-->
+</div><!--/ stats & updates row 5 -->

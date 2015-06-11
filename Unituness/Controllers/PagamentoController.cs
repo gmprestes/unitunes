@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Unituness.Controllers
 {
-    public class HomeController : Controller
+    public class PagamentoController : Controller
     {
         //
-        // GET: /Home/
+        // GET: /Pagamento/
 
         public ActionResult Index()
         {

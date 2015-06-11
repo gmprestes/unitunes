@@ -35,15 +35,15 @@ namespace Repository
 
         #region Mongo Repositorios Getters
 
-        public MongoRepository<DtoArquivo> _repositoryArquivo
+        public MongoRepository<Usuario> _repositoryUsuario
         {
             get
             {
-                if (this._repositoryArquivoAtributo == null)
-                    this._repositoryArquivoAtributo = new MongoRepository<DtoArquivo>(this.MongoUrl);
+                if (this._repositoryUsuarioAtributo == null)
+                    this._repositoryUsuarioAtributo = new MongoRepository<Usuario>(this.MongoUrl);
 
 
-                return this._repositoryArquivoAtributo;
+                return this._repositoryUsuarioAtributo;
             }
         }
 
@@ -51,7 +51,7 @@ namespace Repository
 
         #region Mongo Repositorios Atributos
 
-        private MongoRepository<DtoArquivo> _repositoryArquivoAtributo;
+        private MongoRepository<Usuario> _repositoryUsuarioAtributo;
 
         #endregion
 
