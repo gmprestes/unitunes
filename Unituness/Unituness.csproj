@@ -190,6 +190,7 @@
     <Compile Include="Controllers\Admin\VendasController.cs" />
     <Compile Include="Controllers\API\PagamentoController.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\MidiaController.cs" />
     <Compile Include="Controllers\Unitunes\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\Unitunes\PagamentoController.cs" />
@@ -303,6 +304,7 @@
     <Content Include="img\tn_user_07.jpg" />
     <Content Include="Scripts\angular_1.2.9.min.js" />
     <Content Include="Scripts\angular_app.js" />
+    <Content Include="Scripts\view\midia.js" />
     <Content Include="Scripts\view\pagamento.js" />
     <Content Include="Scripts\view\vendas.js" />
     <Content Include="Theme\404.html" />
@@ -473,6 +475,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Pagamento\Recibo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Midia\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
