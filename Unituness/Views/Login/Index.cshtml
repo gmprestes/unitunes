@@ -49,7 +49,7 @@
                         <span class="padding-bottom avatar avatar-md">
                             <img src="/img/avatar-lg.jpg" class="img-circle" width="100">
                         </span>
-                        <form id="formlogin" class="form-signin form-group" method="post" action="/login">
+                        <form id="formlogin" class="form-signin form-group" method="post" action="/login?ReturnUrl=@Request.QueryString["ReturnUrl"]">
                             @if (ViewBag.Mensagem != null)
                             {
                                 <h4 class="alert alert-danger">@ViewBag.Mensagem</h4>
