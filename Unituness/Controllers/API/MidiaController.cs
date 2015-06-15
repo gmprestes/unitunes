@@ -1,4 +1,5 @@
-﻿using Repository;
+﻿using Models;
+using Repository;
 using SysAdmin.API;
 using SysAdmin.Json;
 using System;
@@ -38,8 +39,14 @@ namespace Unituness.Controllers.API
         public HttpResponseMessage GetAll(AjaxBodyData body)
         {
             var dbAcess = DBAcess.GetInstance();
-            var midias = dbAcess._repositoryMidia.All();
+            var user = dbAcess._repositoryUsuario.GetSingle(q => q.Tokens.Contains(body.token));
+            if (user == null)
+                return new HttpResponseMessage()
+                {
+                    Content = new StringContent(JSONHelper.Serializar(new List<Midia>()))
+                };
 
+            var midias = dbAcess._repositoryMidia.All();
             return new HttpResponseMessage()
             {
                 Content = new StringContent(JSONHelper.Serializar(midias))

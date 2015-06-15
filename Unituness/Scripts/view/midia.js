@@ -36,3 +36,19 @@
 
     $scope.init();
 }
+
+function midia_list_controller($scope, $http) {
+    var token = jQuery("#usertoken").val();
+    
+    $scope.midias = [];
+
+    $http({
+        method: 'POST',
+        url: "/api/midia/getall",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ token: token })
+    }).success(function (data, status) {
+        $scope.midias = data;
+    });
+}
+

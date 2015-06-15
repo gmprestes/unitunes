@@ -478,7 +478,7 @@
     <Content Include="Views\Pagamento\Recibo.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Midia\Index.cshtml" />
+    <Content Include="Views\Midia\Detalhe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Midia\List.cshtml" />

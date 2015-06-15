@@ -1,1 +1,27 @@
-﻿<h2>Listagem de Midias</h2>
+﻿<input id="usertoken" type="hidden" value="@ViewBag.UserToken" />
+<h2>Listagem de Midias</h2>
+<div class="panel">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body" ng-controller="midia_list_controller">
+        <div class="table-responsive">
+            <table class="dataTable table table-striped table-hover table-bordered" id="allan">
+                <thead>
+                    <tr>
+                        <th class="center">Nome</th>
+                        <th class="center">Preço Venda (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="gradeX" ng-repeat="midia in midias">
+                        <td>
+                            {{midia.Nome}}
+                        </td>
+                        <td>{{midia.Preco.formataDinheiro(3,2)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel-footer"></div>
+</div> <!-- / first data table sample -->
