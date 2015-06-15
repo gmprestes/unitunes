@@ -10,11 +10,19 @@ namespace Unituness.Controllers
     {
         //
         // GET: /Midia/
-
         public ActionResult Index()
         {
             return View();
         }
 
+        public ActionResult List()
+        {
+            return View();
+        }
+
+        public ActionResult Edit()
+        {
+            return View();
+        }
     }
 }

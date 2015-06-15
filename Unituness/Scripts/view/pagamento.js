@@ -3,6 +3,9 @@
     $scope.transacao = {};
     $scope.transacao.ValorTransacao = 5;
     $scope.transacao.Cartao = {};
+    $scope.user = {};
+    $scope.user.Credito = 0;
+
 
     $scope.init = function () {
         $http({
@@ -11,7 +14,8 @@
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify({ token: token })
         }).success(function (data, status) {
-            $scope.transacao = data;
+            $scope.transacao = data[0];
+            $scope.user = data[1];
         });
     };
 

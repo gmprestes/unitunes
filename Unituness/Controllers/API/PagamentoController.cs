@@ -30,7 +30,7 @@ namespace Unituness.Controllers.API
             transacao.Cartao = user.CartaoCredito;
             return new HttpResponseMessage()
             {
-                Content = new StringContent(JSONHelper.Serializar(transacao))
+                Content = new StringContent(JSONHelper.Serializar(new object[] { transacao, user }))
             };
         }
 

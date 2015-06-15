@@ -31,7 +31,7 @@ namespace Repository
         /// </summary>
         private DBAcess()
         {
-            this.MongoUrl = new MongoUrl(string.Format("mongodb://{0}:{1}@{2}:27017/{3}", "admin", "123456", "localhost", "unitunes"));
+            this.MongoUrl = new MongoUrl(string.Format("mongodb://{0}:{1}@{2}:27017/{3}", "admin", "123456", "192.168.2.99", "unitunes"));
         }
 
         public static DBAcess GetInstance()

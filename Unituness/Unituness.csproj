@@ -480,6 +480,12 @@
   <ItemGroup>
     <Content Include="Views\Midia\Index.cshtml" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Midia\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Midia\Edit.cshtml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
