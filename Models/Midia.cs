@@ -11,6 +11,8 @@ namespace Models
         public string Descricao { get; set; }
         public string Nome { get; set; } // Uhu !!! Senha em texto plano
         public double Preco { get; set; }
+        public double TaxaUnitunes { get; set; }
+        public double PrecoVenda { get; set; }
 
         public string AutorId { get; set; }
 
