@@ -39,7 +39,7 @@
 
 function midia_list_controller($scope, $http) {
     var token = jQuery("#usertoken").val();
-    
+
     $scope.midias = [];
 
     $http({
@@ -50,5 +50,33 @@ function midia_list_controller($scope, $http) {
     }).success(function (data, status) {
         $scope.midias = data;
     });
+}
+
+function midia_edit_controller($scope, $http) {
+    var token = jQuery("#usertoken").val();
+    var id = window.location.pathname.toString().getRotaID();
+
+    $scope.midia = {};
+
+    $http({
+        method: 'POST',
+        url: "/api/midia/get",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({ token: token, arg: id })
+    }).success(function (data, status) {
+        $scope.midia = data;
+    });
+
+    $scope.save = function () {
+        $http({
+            method: 'POST',
+            url: "/api/midia/get",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ token: token, arg: JSON.stringify($scope.midia) })
+        }).success(function (data, status) {
+            alert("Salvo com sucesso");
+            window.location = "/midia/edit/" + $scope.midia.Id;
+        });
+    }
 }
 
