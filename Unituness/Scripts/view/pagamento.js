@@ -64,3 +64,47 @@ function pagamentorecibocontroller($scope, $http) {
 
     $scope.init();
 }
+
+function pagamentorecibovendacontroller($scope, $http) {
+    var token = jQuery("#usertoken").val();
+    var id = window.location.pathname.toString().getRotaID();
+
+    $scope.transacao = {};
+
+    $scope.init = function () {
+        $http({
+            method: 'POST',
+            url: "/api/pagamento/getvenda",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ token: token, arg: id })
+        }).success(function (data, status) {
+            $scope.venda = data[0];
+            $scope.midia = data[1];
+        });
+    };
+
+    $scope.baixar = function () {
+        window.print();
+    }
+
+    $scope.init();
+}
+
+function vendacontroller($scope, $http) {
+    var token = jQuery("#usertoken").val();
+
+    $scope.vendas = [];
+
+    $scope.init = function () {
+        $http({
+            method: 'POST',
+            url: "/api/pagamento/allvendas",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify({ token: token })
+        }).success(function (data, status) {
+            $scope.vendas = data;
+        });
+    };
+
+    $scope.init();
+}

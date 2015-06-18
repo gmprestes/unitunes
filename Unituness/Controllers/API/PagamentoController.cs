@@ -38,13 +38,40 @@ namespace Unituness.Controllers.API
         public HttpResponseMessage Get(AjaxBodyData body)
         {
             var dbAcess = DBAcess.GetInstance();
-            var user = dbAcess._repositoryUsuario.GetSingle(q => q.Tokens.Contains(body.token));
 
             var transacao = dbAcess._repositoryTransacaoPagamento.GetSingle(q => q.Id == body.arg);
 
             return new HttpResponseMessage()
             {
                 Content = new StringContent(JSONHelper.Serializar(transacao))
+            };
+        }
+
+        [HttpPost]
+        public HttpResponseMessage GetVenda(AjaxBodyData body)
+        {
+            var dbAcess = DBAcess.GetInstance();
+
+            var venda = dbAcess._repositoryVenda.GetSingle(q => q.Id == body.arg);
+            var midia = dbAcess._repositoryMidia.GetSingle(q => q.Id == venda.MidiaId);
+
+
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent(JSONHelper.Serializar(new object[] { venda, midia }))
+            };
+        }
+
+        [HttpPost]
+        public HttpResponseMessage AllVendas(AjaxBodyData body)
+        {
+            var dbAcess = DBAcess.GetInstance();
+
+            var vendas = dbAcess._repositoryVenda.All().OrderByDescending(q => q.DataVenda);
+
+            return new HttpResponseMessage()
+            {
+                Content = new StringContent(JSONHelper.Serializar(vendas))
             };
         }
 

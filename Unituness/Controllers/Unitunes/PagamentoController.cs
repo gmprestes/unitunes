@@ -34,5 +34,10 @@ namespace Unituness.Controllers
             return View();
         }
 
+        public ActionResult Recibo_Midia()
+        {
+            return View();
+        }
+
     }
 }

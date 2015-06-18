@@ -31,12 +31,12 @@ namespace Repository
         /// </summary>
         private DBAcess()
         {
-            this.MongoUrl = new MongoUrl(string.Format("mongodb://{0}:{1}@{2}:27017/{3}", "admin", "123456", "192.168.2.99", "unitunes"));
+            this.MongoUrl = new MongoUrl(string.Format("mongodb://{0}:{1}@{2}:27017/{3}", "admin", "123456", "localhost", "unitunes"));
         }
 
         public static DBAcess GetInstance()
         {
-            if(_instance == null)
+            if (_instance == null)
                 _instance = new DBAcess();
 
             return _instance;
@@ -82,6 +82,18 @@ namespace Repository
             }
         }
 
+        public MongoRepository<Venda> _repositoryVenda
+        {
+            get
+            {
+                if (this._repositoryVendaAtributo == null)
+                    this._repositoryVendaAtributo = new MongoRepository<Venda>(this.MongoUrl);
+
+
+                return this._repositoryVendaAtributo;
+            }
+        }
+
         #endregion
 
         #region Mongo Repositorios Atributos
@@ -91,6 +103,9 @@ namespace Repository
         private MongoRepository<TransacaoPagamento> _repositoryTransacaoPagamentoAtributo;
 
         private MongoRepository<Midia> _repositoryMidiaAtributo;
+
+        private MongoRepository<Venda> _repositoryVendaAtributo;
+
 
         #endregion
 

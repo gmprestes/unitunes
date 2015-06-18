@@ -35,7 +35,8 @@
     <script src="/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="/assets/js/jquery-ui-1.10.4.custom.min.js"></script>
 </head>
-<body onload="initPieChart();" ng-app="app_sysadmin" ng-controller="pagamentocontroller">
+<body onload="initPieChart();" ng-app="app_sysadmin">
+    <input id="usertoken" type="hidden" value="@ViewBag.UserToken" />
     <div id="wrapper">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -52,6 +53,12 @@
                         <span class="sidebar-menu-item-text">Relatorio Vendas</span>
                     </a>
                 </li>
+                <li>
+                    <a href="/midia/list">
+                        <span class="nav-icon"><i class="icon-envelope-alt icon-2x"></i></span>
+                        <span class="sidebar-menu-item-text">Cadastro/Edição de Midias</span>
+                    </a>
+                </li>
 
             </ul>
         </div><!-- /sidebar -->
@@ -61,8 +68,6 @@
                 <img src="/img/preloader.png" alt='loading image' />
             </div>
         </div><!-- / preloader -->
-
-
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="/assets/js/script.js"></script>
         <script src="/scripts/angular_1.2.9.min.js"></script>
