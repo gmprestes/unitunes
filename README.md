@@ -6,5 +6,5 @@ Para rapido desenvolvimento foi utilizado AngularJS para desenvolvimento da inte
 Utiliza o MongoDB como banco de dados sendo que somente é necessario criar um usuario para a base de dados e informar as credenciais de login no arquivo de conecxão ao Db.
 
 # Hosting
-Este trabalho foi desenvolvido em ASP.Net MVC4 sendo que seus deploy não necessita de configurações especiais, apenas faça deploy e veja tudo funcionar.
+Este trabalho foi desenvolvido em ASP.Net MVC4 sendo que para realizar deploy não é preciso realizar nenhuma configuração especial, apenas faça deploy e veja tudo funcionar.
 
